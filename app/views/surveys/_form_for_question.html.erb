@@ -1,0 +1,11 @@
+<%= form_for(@response) do |f| %>
+
+  <div class="field">
+    <%= f.label :response %><br>
+    <%= f.text_field :response %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

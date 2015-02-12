@@ -1,16 +1,17 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:show]
 
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    redirect_to authors_path
   end
 
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    @response = Response.new
   end
 
   # GET /surveys/new
@@ -57,8 +58,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to @survey, notice: 'Survey was successfully updated.' }
-        format.json { render :show, status: :ok, location: @survey }
+        format.html { redirect_to authors_path, notice: 'Survey was successfully updated.' }
       else
         format.html { render :edit }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
