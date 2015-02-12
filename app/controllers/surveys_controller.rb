@@ -5,7 +5,7 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    redirect_to authors_path
   end
 
   # GET /surveys/1
