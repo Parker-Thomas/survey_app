@@ -8,3 +8,9 @@
 
 
 Author.create(name: "tim jones", password: "password")
+Author.create(name: "parker jones", password: "password")
+Author.create(name: "thomas jones", password: "password")
+
+Survey.create(title: "Political Survey", description: "A brief questionnaire to determine your political stance.", author_id: 1)
+Survey.create(title: "Pet Survey", description: "A brief questionnaire to determine the best domestic pet for you.", author_id: 2)
+Survey.create(title: "Housing Survey", description: "A brief questionnaire to determine the best demographic for your next home.", author_id: 3)
