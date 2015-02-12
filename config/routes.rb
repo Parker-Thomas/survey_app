@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'responses/new'
+
+  get 'responses/create'
+
+  get 'responses/update'
+
+  get 'responses/edit'
+
   get 'login' => 'login#new'
 
   post 'login' => 'login#create'
@@ -10,6 +18,8 @@ Rails.application.routes.draw do
   resources :questions
 
   resources :authors
+
+  resources :responses
 
   resources :surveys do
     member do
