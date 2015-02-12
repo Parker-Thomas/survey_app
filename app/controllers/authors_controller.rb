@@ -4,6 +4,10 @@ class AuthorsController < ApplicationController
   def new
   end
 
+  def show
+    redirect_to authors_path
+  end
+
   def create
   end
 

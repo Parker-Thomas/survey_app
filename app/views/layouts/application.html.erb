@@ -10,7 +10,9 @@
 <body>
 <% if @current_user %>
   <%= link_to 'logout', logout_path %>
+  <%= link_to 'Home', authors_path %>
 <% end %>
+
 <%= yield %>
 
 </body>

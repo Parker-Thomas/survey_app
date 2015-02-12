@@ -26,4 +26,15 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <h3>Questions</h3>
+
+  <%= f.fields_for :questions do |ff| %>
+    <p>Title: <%= ff.text_field :title %></p>
+    <p>Description: <%= ff.text_area :description %></p>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

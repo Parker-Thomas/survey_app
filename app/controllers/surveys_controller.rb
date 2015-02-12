@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user
 
   # GET /surveys
   # GET /surveys.json
@@ -20,6 +21,19 @@ class SurveysController < ApplicationController
   # GET /surveys/1/edit
   def edit
   end
+
+  # GET
+#def edit_questions
+  #end
+#
+  ## POST
+  #def update_questions
+  #  @survey.questions = []
+  #  params[:questions].keys.each do |question_id|
+  #    @survey.questions << Question.find_by_id(question_id)
+  #  end
+  #  redirect_to edit_questions_survey_path
+  #end
 
   # POST /surveys
   # POST /surveys.json
