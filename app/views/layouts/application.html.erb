@@ -8,20 +8,12 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-<% if @current_user %>
-  <%= link_to 'logout', logout_path %>
-  <%= link_to 'Home', authors_path %>
-<% end %>
-
-<%= yield %>
-=======
-
   <% if @current_user %>
     <%= link_to 'logout', logout_path %>
+    <%= link_to 'Home', authors_path %>
   <% end %>
+
   <%= yield %>
->>>>>>> 53edc75ee5cd02cecc35929cc71c55a103fde7c7
 
 </body>
 </html>

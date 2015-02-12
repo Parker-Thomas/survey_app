@@ -1,6 +1,7 @@
-@include 'reset';
-@include 'login';
-@include 'authors';
-@include 'questions';
-@include 'scaffolds';
-@include 'surveys';
+@import 'reset';
+@import 'colors';
+@import 'login';
+@import 'authors';
+@import 'questions';
+@import 'scaffolds';
+@import 'surveys';
