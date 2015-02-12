@@ -1,1 +1,7 @@
 <h1>Hello</h1>
+
+<h3><%=@current_user.name%></h3>
+    <%= link_to 'New Survey', new_survey_path %>
+    <% @current_user.surveys.each do |s| %>
+      <%= s.title %>
+    <% end %>
