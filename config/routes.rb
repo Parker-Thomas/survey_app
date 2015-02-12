@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+
+
   get 'login' => 'login#new'
 
   post 'login' => 'login#create'
 
   get 'logout' => 'login#logout'
 
-
+  resources :responses
+  
   resources :questions
 
   resources :authors

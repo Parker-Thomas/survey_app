@@ -1,6 +1,10 @@
 class AuthorsController < ApplicationController
   before_action :authenticate_user
 
+  def index
+    @surveys = Survey.where(author_id: session[:user_id])
+  end
+
   def new
   end
 
