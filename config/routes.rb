@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
-  get 'questions/new'
 
-  get 'questions/create'
+  get 'login' => 'login#new'
 
-  get 'questions/edit'
+  post 'login' => 'login#create'
 
-  get 'questions/update'
-
-  get 'questions/destroy'
-
-  get 'questions/index'
+  get 'logout' => 'login#logout'
 
   resources :surveys
+
+  resources :questions
 
   resources :authors
 
@@ -19,7 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'authors#index'
+  root 'login#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
