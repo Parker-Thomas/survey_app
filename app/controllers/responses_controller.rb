@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  
+
   def index
   end
 
@@ -8,6 +8,7 @@ class ResponsesController < ApplicationController
   end
 
   def new
+
   end
 
   def edit
@@ -18,16 +19,17 @@ class ResponsesController < ApplicationController
 
   def create
     @response = Response.new(response_params)
-
-    respond_to do |format|
       if @response.save
-        format.html { redirect_to @response, notice: 'Response was successfully created.' }
-        format.json { render :show, status: :created, location: @response }
+        submission=Submission.new
+        survey_id=Question.find(@response.question_id).survey.id
+        submission.survey_id= survey_id
+        submission.save
+        @response.submission_id= submission.id
+        @response.save
+        redirect_to @response, notice: 'Response was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @response.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   def destroy
@@ -36,11 +38,9 @@ class ResponsesController < ApplicationController
 end
 
 private
-  def set_response
-    @response = Response.find(params[:id])
-  end
+
+
 
   def response_params
-    params.require(:response).permit(:name,
-      responses_attributes: [:name, :_destroy])
+    params.require(:response).permit(:name, :survey_id, :question_id)
   end
