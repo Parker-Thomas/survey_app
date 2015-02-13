@@ -3,13 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .log-in {
-  max-width: 45em;
+  max-width: 25em;
   margin: 0 auto;
   padding: 1em;
+}
 
-  input {
-    display: block;
-    padding: .5em;
-    margin-bottom: 1em;
-  }
+
+.form-control {
+  display: block;
+  padding: .5em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.btn-primary {
+  padding: .5em;
+  font-weight: 400;
+  border: none;
+  margin-left: 90%;
 }

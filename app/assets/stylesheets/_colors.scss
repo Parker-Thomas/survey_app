@@ -16,3 +16,16 @@ body {
   text-align: center;
   color: $paper;
 }
+
+.page-title {
+  span {
+    color: $hilite;
+  }
+}
+
+.btn-primary {
+  background-color: $hilite;
+  color: #4c4c4e;
+  font-weight: 800;
+  border: none;
+}
