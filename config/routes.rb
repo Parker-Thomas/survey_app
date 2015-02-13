@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :responses
 
+  resources :submissions
+
   resources :surveys do
     member do
       get 'edit_questions'
