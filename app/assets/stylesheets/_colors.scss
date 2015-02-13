@@ -5,3 +5,14 @@ $aquablue: #92CDCF;
 $paper: #EEEFF7;
 
 $hilite: $aquablue;
+$basecolor: $darkblue;
+
+body {
+  background-color: $paper;
+}
+
+.page-header {
+  background-color: $basecolor;
+  text-align: center;
+  color: $paper;
+}
