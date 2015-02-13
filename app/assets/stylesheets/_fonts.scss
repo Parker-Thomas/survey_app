@@ -1,6 +1,11 @@
 @font-face {
   font-family: Lato;
-  src: local('../fonts/Lato/Lato-Regular.ttf');
+  src: url('/assets/Lato/Lato-Light.ttf');
+}
+
+@font-face {
+  font-family: Lobster;
+  src: url('/assets/Lobster/Lobster-Regular.ttf');
 }
 
 * {
