@@ -1,0 +1,15 @@
+<h2>Short answer:</h2>
+
+<%= form_for(@response) do |f| %>
+
+
+  <div class="field"><br>
+    <%= f.label :response %><br>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :question_id, :value=> question_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
