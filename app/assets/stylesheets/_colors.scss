@@ -26,6 +26,9 @@ body {
 .btn-primary {
   background-color: $hilite;
   color: #4c4c4e;
-  font-weight: 800;
-  border: none;
+}
+
+.page-footer {
+  background-color: $darkestblue;
+  color: $paper;
 }

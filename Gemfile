@@ -12,7 +12,7 @@ gem 'bourbon'
 
 gem 'neat'
 
-gem 'refills'
+gem 'refills', '~> 0.1.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
