@@ -1,0 +1,22 @@
+.page-header {
+  padding: 1em;
+
+  h1 {
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.home {
+  display: none;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .25em;
+}

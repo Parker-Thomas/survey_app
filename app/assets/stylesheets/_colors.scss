@@ -3,3 +3,29 @@ $darkblue: #31353D;
 $blue: #445878;
 $aquablue: #92CDCF;
 $paper: #EEEFF7;
+
+$hilite: $aquablue;
+$basecolor: $darkblue;
+
+body {
+  background-color: $paper;
+}
+
+.page-header {
+  background-color: $basecolor;
+  text-align: center;
+  color: $paper;
+}
+
+.page-title {
+  span {
+    color: $hilite;
+  }
+}
+
+.btn-primary {
+  background-color: $hilite;
+  color: #4c4c4e;
+  font-weight: 800;
+  border: none;
+}
