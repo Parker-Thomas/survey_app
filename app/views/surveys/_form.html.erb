@@ -24,9 +24,14 @@
   <h3>Questions</h3>
 
   <%= f.fields_for :questions do |ff| %>
-    <label>Text: <%= ff.text_field :text %></label>
-    <p>Description: <%= ff.text_area :description %></p>
+    <%= ff.label :question_type, "Question Type" %><br>
+    <%= ff.select :question_type, options_for_select(["Multiple Choice", "Long Answer", "Short Answer", "Yes or No"]), :include_blank=> true%>
+    <p>
+      <%= render 'form_for_questions', :ff => ff %>
+    </p>
   <% end %>
+
+
 
   <div class="actions">
     <%= f.submit %>

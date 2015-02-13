@@ -1,0 +1,6 @@
+<% @submissions.each do |s| %>
+  <p>Submission:<%= s.id %></p>
+  <%s.responses.each do |r|%>
+    <%= r.name %>
+  <% end %>
+<% end %>

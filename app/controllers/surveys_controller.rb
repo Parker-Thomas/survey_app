@@ -1,11 +1,10 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:index, :show, :edit, :update, :destroy]
   before_action :authenticate_user, except: [:show]
 
   # GET /surveys
   # GET /surveys.json
   def index
-    redirect_to authors_path
   end
 
   # GET /surveys/1
