@@ -31,5 +31,12 @@ body {
 .page-footer {
   background-color: $darkestblue;
   color: $paper;
-  
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: $darkblue;
+  }
 }

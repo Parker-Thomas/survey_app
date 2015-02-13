@@ -16,9 +16,15 @@
   width: 100%;
 }
 
-.btn-primary {
+.btn-primary,
+.btn,
+input[type=submit] {
   padding: .5em;
   font-weight: 400;
   border: none;
+  background-color: $hilite;
+}
+
+.btn-primary {
   margin-left: 90%;
 }

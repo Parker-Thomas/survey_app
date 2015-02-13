@@ -24,7 +24,7 @@
   <h3>Questions</h3>
 
   <%= f.fields_for :questions do |ff| %>
-    <p>Text: <%= ff.text_field :text %></p>
+    <label>Text: <%= ff.text_field :text %></label>
     <p>Description: <%= ff.text_area :description %></p>
   <% end %>
 

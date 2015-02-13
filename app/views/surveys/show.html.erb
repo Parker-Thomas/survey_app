@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+<label id="notice"><%= notice %></label>
 
-<p>
+<label>
   <strong>Title:</strong>
   <%= @survey.title %>
-</p>
+</label>
 
-<p>
+<label>
   <strong>Description:</strong>
   <%= @survey.description %>
-</p>
+</label>
 
-<p>
+<label>
   <strong>Author:</strong>
   <%= @survey.author.name %>
-</p>
+</label>
 
 <% @survey.questions.each do |q| %>
   <%= q.text %> <br>
