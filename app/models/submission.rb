@@ -1,3 +1,4 @@
 class Submission < ActiveRecord::Base
-  belongs_to :submission
+  has_many :responses
+  belongs_to :survey
 end

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   get 'login' => 'login#new'
 
   post 'login' => 'login#create'
@@ -9,10 +7,12 @@ Rails.application.routes.draw do
   get 'logout' => 'login#logout'
 
   resources :responses
-  
+
   resources :questions
 
   resources :authors
+
+  resources :responses
 
   resources :surveys do
     member do
