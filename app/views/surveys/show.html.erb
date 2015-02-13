@@ -18,7 +18,7 @@
 <% @survey.questions.each do |q| %>
   <%= q.text %> <br>
   <%= q.description %> <br>
-  <%= render 'form_for_question'%>
+  <%= render 'form_for_response'%>
 <% end %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |

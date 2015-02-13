@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-  get 'responses/new'
-
-  get 'responses/create'
-
-  get 'responses/update'
-
-  get 'responses/edit'
-=======
-
->>>>>>> 9b52cdeb5a0b3146fc703e405a93f42c783634d7
-
   get 'login' => 'login#new'
 
   post 'login' => 'login#create'
@@ -19,7 +7,7 @@ Rails.application.routes.draw do
   get 'logout' => 'login#logout'
 
   resources :responses
-  
+
   resources :questions
 
   resources :authors
