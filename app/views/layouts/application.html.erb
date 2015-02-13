@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SurveyApp</title>
+  <title>Reson Surveys</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
+  <nav class="page-nav">
+    <% if @current_user %>
+      <%= link_to 'Home', authors_path %>
+      <%= link_to 'logout', logout_path %>
+    <% end %>
+  </nav>
   <header class="page-header">
     <h1 class="page-title">RE<span>SON</span></h1>
-    <h2 class="page-subtitle">form builder</h2>
+    <h2 class="page-subtitle">survey builder</h2>
   </header>
+  <div class="page-content">
 
-  <% if @current_user %>
-    <%= link_to 'logout', logout_path %>
-    <%= link_to 'Home', authors_path %>
-  <% end %>
+    <%= yield %>
 
-  <%= yield %>
-
+  </div>
   <footer class="page-footer">
     <p>&copy; 2015 Thomas, Parker, &amp; Tim</p>
   </footer>

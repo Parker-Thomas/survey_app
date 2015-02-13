@@ -1,5 +1,8 @@
 .page-header {
   padding: 1em;
+  background: url('reson.jpg') $darkblue;
+  background-size: cover;
+  background-position: 0% 58%;
 
   h1 {
     margin-bottom: 0;
@@ -10,12 +13,28 @@
 }
 
 body {
-  padding-bottom: 2em;
+  padding: 2em 0 4em 0;
 }
+
 .page-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   padding: .25em;
+}
+
+.page-nav {
+  text-align: right;
+  padding: .5em;
+  text-transform: uppercase;
+  a {
+    padding-left: .5em;
+  }
+}
+
+.page-content {
+  padding: 2em;
+  max-width: 45em;
+  margin: 0 auto;
 }
