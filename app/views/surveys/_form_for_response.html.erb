@@ -1,6 +1,6 @@
 <%= form_for(@response) do |f| %>
 
-
+  <%= if @response.question.question_type == short answer  %>
   <div class="field"><br>
     <%= f.label :response %><br>
     <%= f.text_field :name %>
