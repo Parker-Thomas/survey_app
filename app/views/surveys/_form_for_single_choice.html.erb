@@ -1,9 +1,17 @@
 <div class="multiple">
-<span>Multiple Choice:</span>
+<span>Single Choice:</span>
+<div class="field">
+  <%= ff.label :text %>
+  <%= ff.text_area :text %>
+</div>
+<p><%= :question.inspect %><p>
 
-  <div class="field">
-    <%= ff.label :text %>
-    <%= ff.text_area :text %>
-  </div>
+ <%= ff.fields_for :options do |fff| %>
+  <p><%= fff.object.inspect %>
+    <div class="field">
+      <%= fff.label :name %>
+      <%= fff.text_area :name %>
+    </div>
+  <%end%>
 
 </div>

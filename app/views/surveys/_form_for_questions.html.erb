@@ -1,4 +1,6 @@
-<script type="text/html" id="multiple-choice">
+
+<% if ff.object.question_type_id == 3 %>
+<script type="text/html"  id="multiple-choice">
   <!-- This is the tricky one because I don't think we create a multiple choice -->
   <!-- This needs to be text inputs I think..  as you type in one, the next one shows -->
   <!-- empty fields should be ignored -->
@@ -8,18 +10,25 @@
   <%= render 'form_for_single_choice', :ff => ff %>
 
 </script>
-
+<%end%>
+<% if ff.object.question_type_id == 4 %>
 <script type="text/html" id="yes-no">
   <%= render 'form_for_yes_no', :ff => ff %>
 
 </script>
+<% end %>
+<% if ff.object.question_type_id == 1 %>
+
 <script type="text/html" id="long">
   <%= render 'form_for_long', :ff => ff %>
 </script>
+<% end %>
+<% if ff.object.question_type_id == 2 %>
 <script type="text/html" id="short">
   <%= render 'form_for_short', :ff => ff %>
 
 </script>
+<% end %>
 <script type="text/html" id="survey-box">
   <!-- Put your form in here and no one will know our Little Secret -->
   <form class="survey">
