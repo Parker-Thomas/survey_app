@@ -2,7 +2,7 @@ $(function() {
 
   // SELECT A QUESTION
   // When user chooses a question type, show it
-  $('select').on('change', showQuestion);
+  $('.question-type').on('change', showQuestion);
 
   function showQuestion(e) {
     var item=$(this);
