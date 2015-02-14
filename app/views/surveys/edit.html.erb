@@ -3,18 +3,3 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', authors_path %>
-
-<script type="text/html" id="question-box">
-  <!-- Put your form in here  and no one will know our Little Secret -->
-  <div class="survey">
-    <div class="field">
-      <form class="question-new">
-        <input type="text" class="question-title">
-        <%= collection_select(:question, :question_type_id, QuestionType.all, :id, :name) %>
-      </form>
-      <buttom type="submit" class="btn">Done</button>
-    </div>
-    <button class="btn">Add Item</button>
-
-  </div>
-</script>
