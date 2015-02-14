@@ -10,18 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *
+ * REQUIRE TREE DOES WEIRD THINGS!!
+ *
  */
 
-
- @import 'reset';
- @import 'colors';
- @import 'bourbon';
- @import 'neat';
- @import 'fonts';
- @import 'authors';
- @import 'questions';
- @import 'surveys';
- @import 'login';
- @import 'responses';
+@import 'reset';
+@import 'colors';
+@import 'bourbon';
+@import 'neat';
+@import 'fonts';
+@import 'authors';
+@import 'questions';
+@import 'surveys';
+@import 'login';
+@import 'layout';
+@import 'responses';
