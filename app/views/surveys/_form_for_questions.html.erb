@@ -1,48 +1,56 @@
 
 <% if ff.object.question_type_id == 3 %>
-<script type="text/html"  id="multiple-choice">
-  <!-- This is the tricky one because I don't think we create a multiple choice -->
-  <!-- This needs to be text inputs I think..  as you type in one, the next one shows -->
-  <!-- empty fields should be ignored -->
-  <!-- <input type="text" id="multiple-choice">
-  <input type="text" id="multiple-choice"> -->
 
   <%= render 'form_for_single_choice', :ff => ff %>
 
-</script>
 <%end%>
 <% if ff.object.question_type_id == 4 %>
-<script type="text/html" id="yes-no">
   <%= render 'form_for_yes_no', :ff => ff %>
 
-</script>
 <% end %>
 <% if ff.object.question_type_id == 1 %>
 
+  <%= render 'form_for_long', :ff => ff %>
+<% end %>
+<% if ff.object.question_type_id == 2 %>
+  <%= render 'form_for_short', :ff => ff %>
+<% end %>
+
+<!-- Below is what I need to make the forms
+  It would be better not to have them with each question
+  ... it's alot of unneccesary code. If you have this with
+  every question and we have 6 questions, that's 18 unused
+  divs being appended to the dom ...
+ -->
+
+<script type="text/html" id="multiple-choice">
+  <%= render 'form_for_single_choice', :ff => ff %>
+</script>
+
+<script type="text/html" id="yes-no">
+  <%= render 'form_for_yes_no', :ff => ff %>
+</script>
 <script type="text/html" id="long">
   <%= render 'form_for_long', :ff => ff %>
 </script>
-<% end %>
-<% if ff.object.question_type_id == 2 %>
 <script type="text/html" id="short">
   <%= render 'form_for_short', :ff => ff %>
-
 </script>
-<% end %>
+
 <script type="text/html" id="survey-box">
   <!-- Put your form in here and no one will know our Little Secret -->
   <form class="survey">
     <div class="field">
-      <input type="text" class="question-title">
-      <input type="text" class="question-description">
-      <!-- // Selecting this will output the correct question type -->
-      <select type="question-type">
-        <option>Multiple Choice</option>
-        <option>CheckBox</option>
-        <option>Text</option>
-        <option>Paragraph</option>
-      </select>
       <div class="new-question">
+        <input type="text" class="question-title">
+        <input type="text" class="question-description">
+        <!-- // Selecting this will output the correct question type -->
+        <select type="question-type">
+          <option>Multiple Choice</option>
+          <option>CheckBox</option>
+          <option>Text</option>
+          <option>Paragraph</option>
+        </select>
         <!-- This is where the question goes after we choose the options -->
 
         <!-- this button only finishes the dialogue to add the button

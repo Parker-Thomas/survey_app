@@ -20,7 +20,6 @@
     <%= f.text_field :description %>
   </div>
 
-
   <h3>Update/Create Questions</h3>
 
   <%= f.fields_for :questions do |question_fields| %>
@@ -32,9 +31,8 @@
     <div class="actions">
       <%= button_tag "done", class: "btn" %>
     </div>
+    <%= render 'form_for_questions', :ff => ff %>
   <% end %>
-
-
 
   <div class="actions">
     <%= f.submit %>
