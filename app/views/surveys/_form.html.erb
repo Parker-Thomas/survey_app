@@ -25,7 +25,7 @@
 
   <%= f.fields_for :questions do |ff| %>
     <%= ff.label :question_type, "Question Type" %><br>
-    <%= ff.select :question_type, options_for_select(["Multiple Choice", "Long Answer", "Short Answer", "Yes or No"]), :include_blank=> true%>
+    <%= ff.collection_select(:question_type, QuestionType.all, :id, :name)%>
     <p>
       <%= render 'form_for_questions', :ff => ff %>
     </p>

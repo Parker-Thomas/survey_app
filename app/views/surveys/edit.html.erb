@@ -10,12 +10,7 @@
     <div class="field">
       <form class="question-new">
         <input type="text" class="question-title">
-        <select type="question-type">
-          <option>Multiple Choice</option>
-          <option>CheckBox</option>
-          <option>Text</option>
-          <option>Paragraph</option>
-        </select>
+        <%= collection_select(:question, :question_type_id, QuestionType.all, :id, :name) %>
       </form>
       <buttom type="submit" class="btn">Done</button>
     </div>

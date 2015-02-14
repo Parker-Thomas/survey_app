@@ -18,8 +18,6 @@ class ResponsesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
   test "should get edit" do
     get :edit
 
@@ -31,8 +29,6 @@ class ResponsesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit
   test "should get create" do
     get :create
     assert_response :success

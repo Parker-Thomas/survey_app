@@ -1,7 +1,7 @@
 <%= form_for(@response) do |f| %>
 
-  <%= if @response.question.question_type == short answer  %>
   <div class="field"><br>
+    <%= if @response.
     <%= f.label :response %><br>
     <%= f.text_field :name %>
     <%= f.hidden_field :question_id, :value=> question_id %>

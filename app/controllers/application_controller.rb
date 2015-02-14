@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   private
   protected
   def authenticate_user
+    Rails.logger.debug "session: #{session.inspect}" 
     if session[:user_id]
       @current_user = Author.find(session[:user_id])
       return true
