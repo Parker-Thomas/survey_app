@@ -20,22 +20,18 @@
     <%= f.text_field :description %>
   </div>
 
-
   <h3>Update/Create Questions</h3>
-
-  <%= f.fields_for :questions do |question_fields| %>
-    <%= question_fields.label :question_type, "Question Type" %><br>
-    <%= question_fields.collection_select(:question_type, QuestionType.all, :id, :name)%>
-    <p>
-      <p><%= question_fields.object.inspect %>
-      <%= render 'form_for_questions', :ff => question_fields %>
-    </p>
+  <%= f.fields_for :questions do |ff| %>
+    <%= ff.label :question_type, "Question Type" %><br>
+    <%= ff.select :question_type, options_for_select(["Multiple Choice", "Long Answer", "Short Answer", "Yes or No"]), {:include_blank=> true}, {:class=>'question-type'} %>
+    <div class="question-choice">
+    </div>
     <div class="actions">
       <%= button_tag "done", class: "btn" %>
     </div>
+    <%= render 'form_for_questions', :ff => ff %>
+
   <% end %>
-
-
 
   <div class="actions">
     <%= f.submit %>

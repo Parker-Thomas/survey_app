@@ -3,32 +3,3 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', authors_path, class: 'btn btn-back' %>
-
-
-<script type="text/html" id="survey-box">
-  <!-- Put your form in here and no one will know our Little Secret -->
-  <form class="survey">
-    <div class="field">
-      <input type="text" class="question-title">
-      <input type="text" class="question-description">
-      <!-- // Selecting this will output the correct question type -->
-      <select type="question-type">
-        <option>Multiple Choice</option>
-        <option>CheckBox</option>
-        <option>Text</option>
-        <option>Paragraph</option>
-      </select>
-      <div class="new-question">
-        <!-- This is where the question goes after we choose the options -->
-
-        <!-- this button only finishes the dialogue to add the button
-        it's important that this is not a submit -->
-        <buttom class="btn">Create Question</button>
-      </div>
-
-      <!-- this button only adds a new question -->
-      <button class="btn">Add Item</button>
-      <!-- This button will submit the entire survey once it's done -->
-      <button type="submit" name="button">Create Survey</button>
-  </form>
-</script>
