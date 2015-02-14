@@ -1,13 +1,13 @@
 <%= form_for(@response) do |f| %>
 
   <%= if @response.question.question_type == short answer  %>
-  <div class="field"><br>
-    <%= f.label :response %><br>
+  <div class="field">
+    <%= f.label :response %>
     <%= f.text_field :name %>
     <%= f.hidden_field :question_id, :value=> question_id %>
   </div>
 
   <div class="actions">
-    <%= button_tag "save question", class: "btn" %>
+    <%= button_tag "done", class: "btn" %>
   </div>
 <% end %>
