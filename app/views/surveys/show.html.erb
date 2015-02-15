@@ -16,68 +16,62 @@
 </label><br>
 
 
-<% @survey.questions.each do |q| %>
-  <% if q.question_type_id == 3 %>
-    <%= form_for(@response) do |r| %>
-      <div class="field">
-        <%= q.text %><br/>
-          <% q.options.each do |o|%>
-            <%= r.label :name, "#{o.name}", :value => "#{o.name}"  %>
-            <%= r.radio_button :name, "#{o.name}" %>
-          <%end%>
-        <%= r.hidden_field :question_id, :value=> q.id%>
-      </div>
-      <div class="actions">
-        <%= r.submit class: "btn" %>
-      </div>
+<%= form_for(@submission) do |s| %>
+    <% @survey.questions.each do |q| %>
+    <%= s.fields_for :responses do |r| %>
+      <% if q.question_type_id == 3 %>
+
+          <div class="field">
+            <%= q.text %><br/>
+              <% q.options.each do |o|%>
+                <%= r.label :name, "#{o.name}", :value => "#{o.name}"  %>
+                <%= r.radio_button :name, "#{o.name}" %>
+              <%end%>
+            <%= r.hidden_field :question_id, :value=> q.id%>
+          </div>
+
+      <%end%>
+      <% if q.question_type_id == 2 %>
+
+
+          <div class="field">
+            <%= r.label :response %>
+            <%= r.text_field :name %>
+            <%= r.hidden_field :question_id, :value=> q.id%>
+          </div>
+
+        <%end%>
+
+    <% if q.question_type_id == 4 %>
+
+        <div class="field">
+          <%= q.text %><br/>
+          <%= r.label :name, "Yes", :value => "yes"  %>
+          <%= r.radio_button :name, "yes" %>
+          <%= r.label :name, "No", :value => "no" %>
+          <%= r.radio_button :name, "no", :checked => true %>
+          <%= r.hidden_field :question_id, :value=> q.id%>
+
+        </div>
+
     <%end%>
-  <%end%>
-  <% if q.question_type_id == 2 %>
-    <%= form_for(@response) do |r| %>
+    <% if q.question_type_id == 1 %>
+
 
       <div class="field">
         <%= r.label :response %>
         <%= r.text_field :name %>
-        <%= r.hidden_field :question_id, :value=> q.id%>
+        <%= r.hidden_field :question_id, :value=>  q.id%>
       </div>
 
-      <div class="actions">
-        <%= r.submit class: "btn" %>
-      </div>
-
-    <%end%>
-  <%end%>
-<% if q.question_type_id == 4 %>
-  <%= form_for(@response) do |r| %>
-    <div class="field">
-      <%= q.text %><br/>
-      <%= r.label :name, "Yes", :value => "yes"  %>
-      <%= r.radio_button :name, "yes" %>
-      <%= r.label :name, "No", :value => "no" %>
-      <%= r.radio_button :name, "no", :checked => true %>
-      <%= r.hidden_field :question_id, :value=> q.id%>
-    </div>
-    <div class="actions">
-      <%= r.submit class: "btn" %>
-    </div>
-  <%end%>
-<%end%>
-<% if q.question_type_id == 1 %>
-<%= form_for(@response) do |r| %>
-
-  <div class="field">
-    <%= r.label :response %>
-    <%= r.text_field :name %>
-    <%= r.hidden_field :question_id, :value=>  q.id%>
-  </div>
-
-  <div class="actions">
-    <%= r.submit class: "btn" %>
-  </div>
+      <%end%>
 
   <%end%>
 <%end%>
-
+<div class="actions">
+  <%= s.hidden_field :survey_id, :value=> @survey.id%>
+  <%= s.submit class: "btn" %>
+</div>
 <% end %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
