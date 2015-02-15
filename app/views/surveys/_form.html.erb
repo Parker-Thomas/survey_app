@@ -24,7 +24,7 @@
 
   <%= f.fields_for :questions do |question_fields| %>
     <%= question_fields.label :question_type, "Question Type" %><br>
-    <%= question_fields.collection_select(:question_type, QuestionType.all, :id, :name, {}, {:class=>'question-type'})%>
+    <%= question_fields.collection_select(:question_type, QuestionType.all, :id, :name, {}, {:class=>'my-custom-class'})%>
     <p>
       <%= render 'form_for_questions', :ff => question_fields %>
     </p>
