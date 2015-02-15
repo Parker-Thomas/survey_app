@@ -8,12 +8,12 @@ $(function() {
       .first()
       .clone();
 
-    app.incrementValues();
 
     newQuestion.children('')
 
     item.before(newQuestion);
 
+    app.incrementValues();
   });
 
 });

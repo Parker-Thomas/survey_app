@@ -3,6 +3,7 @@ $(function() {
   // SELECT A QUESTION
   // When user chooses a question type, show it
   $('form').on('change', '.question-type', showQuestion);
+  $('.question-type').selectable();
 
   function showQuestion(e) {
     var item=$(this);
