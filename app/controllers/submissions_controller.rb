@@ -8,16 +8,11 @@ before_action :set_submission, only: [:update, :show]
 
   def create
     @submission = Submission.new(submission_params)
-
-    respond_to do |format|
       if @submission.save
-        format.html { redirect_to @submission, notice: 'submission was successfully created.' }
-        format.json { render :show, status: :created, location: @submission }
+        redirect_to authors_path, notice: 'Response was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   def update
@@ -40,6 +35,7 @@ before_action :set_submission, only: [:update, :show]
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def submission_params
-    params.require(:submission).permit(:survey_id)
+    params.require(:submission).permit(:survey_id,
+      responses_attributes: [:id,:name, :submission_id, :question_id])
   end
 end

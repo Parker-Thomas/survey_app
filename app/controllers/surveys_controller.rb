@@ -11,7 +11,10 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    @submission = Submission.new
+    @submission.responses.build
     @response = Response.new
+
   end
 
   # GET /surveys/new
