@@ -33,8 +33,19 @@
     <%end%>
   <%end%>
   <% if q.question_type_id == 2 %>
-  <p> this is short answer</p>
+    <%= form_for(@response) do |r| %>
 
+      <div class="field">
+        <%= r.label :response %>
+        <%= r.text_field :name %>
+        <%= r.hidden_field :question_id, :value=> q.id%>
+      </div>
+
+      <div class="actions">
+        <%= r.submit class: "btn" %>
+      </div>
+
+    <%end%>
   <%end%>
 <% if q.question_type_id == 4 %>
   <%= form_for(@response) do |r| %>
@@ -52,8 +63,19 @@
   <%end%>
 <%end%>
 <% if q.question_type_id == 1 %>
-  <p> this is long answer</p>
+<%= form_for(@response) do |r| %>
 
+  <div class="field">
+    <%= r.label :response %>
+    <%= r.text_field :name %>
+    <%= r.hidden_field :question_id, :value=>  q.id%>
+  </div>
+
+  <div class="actions">
+    <%= r.submit class: "btn" %>
+  </div>
+
+  <%end%>
 <%end%>
 
 <% end %>
