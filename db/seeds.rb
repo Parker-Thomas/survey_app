@@ -20,7 +20,8 @@ QuestionType.create(name: "Short answer")
 QuestionType.create(name: "Single choice answer")
 QuestionType.create(name: "Yes or no answer")
 
-Question.create(text: "Do you think the President is doing a good job?", description: "Answer at your own accord.", question_type_id: 1, survey_id: 1, order_number: 1)
+Question.create(text: "Do you think the President is doing a good job?", description: "White House, baby.", question_type_id: 1, survey_id: 1, order_number: 1)
+Question.create(text: "Is Barack Hussein Obama a Democrat or a Republican", description: "Presidential, baby.", question_type_id: 1, survey_id: 1, order_number: 2)
 
 
 Option.create(name: "options", question_id: 1, order_number: 1)

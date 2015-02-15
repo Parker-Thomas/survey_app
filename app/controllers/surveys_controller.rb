@@ -35,7 +35,17 @@ class SurveysController < ApplicationController
 
   # POST
   def submit_responses
+    # puts '----------'
+    # puts params
+    # puts '----------'
+    # puts params["responses"]
+    # puts '----------'
 
+    submission = Submission.create
+    @survey.questions.each do |q|
+      Response.create!(question_id: q.id,  submission_id: submission.id, name: params[:responses][q.id.to_s]  )
+    end
+    redirect_to authors_path
   end
 
   # GET
