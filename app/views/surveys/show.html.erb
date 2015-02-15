@@ -21,10 +21,10 @@
     <%= form_for(@response) do |r| %>
       <div class="field">
         <%= q.text %><br/>
-        <%= r.label :name, "Yes", :value => "yes"  %>
-        <%= r.radio_button :name, "yes" %>
-        <%= r.label :name, "No", :value => "no" %>
-        <%= r.radio_button :name, "no", :checked => true %>
+          <% q.options.each do |o|%>
+            <%= r.label :name, "#{o.name}", :value => "#{o.name}"  %>
+            <%= r.radio_button :name, "#{o.name}" %>
+          <%end%>
         <%= r.hidden_field :question_id, :value=> q.id%>
       </div>
       <div class="actions">
@@ -35,10 +35,21 @@
   <% if q.question_type_id == 2 %>
   <p> this is short answer</p>
 
-<%end%>
+  <%end%>
 <% if q.question_type_id == 4 %>
-  <p> this is yes no</p>
-
+  <%= form_for(@response) do |r| %>
+    <div class="field">
+      <%= q.text %><br/>
+      <%= r.label :name, "Yes", :value => "yes"  %>
+      <%= r.radio_button :name, "yes" %>
+      <%= r.label :name, "No", :value => "no" %>
+      <%= r.radio_button :name, "no", :checked => true %>
+      <%= r.hidden_field :question_id, :value=> q.id%>
+    </div>
+    <div class="actions">
+      <%= r.submit class: "btn" %>
+    </div>
+  <%end%>
 <%end%>
 <% if q.question_type_id == 1 %>
   <p> this is long answer</p>
