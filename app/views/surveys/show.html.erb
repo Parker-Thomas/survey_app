@@ -15,10 +15,34 @@
   <%= @survey.author.name %>
 </label>
 
+
 <% @survey.questions.each do |q| %>
-  <%= q.text %> <br>
-  <%= q.description %> <br>
-  <%= render 'form_for_response', question_id: q.id %>
+<% if q.question_type_id == 3 %>
+  <%= form_for(@response) do |r| %>
+    <div class="field">
+       <%= q.text %><br/>
+       <%= r.label :name, "Yes", :value => "true"  %>
+       <%= r.radio_button :name, true %>
+       <%= r.label :name, "No", :value => "false" %>
+       <%= r.radio_button :name, false, :checked => true %>
+   </div>
+   <div class="actions">
+     <%= r.submit class: "btn" %>
+  <%end%>
+<%end%>
+<% if q.question_type_id == 2 %>
+<p> this is short answer</p>
+
+<%end%>
+<% if q.question_type_id == 4 %>
+<p> this is yes no</p>
+
+<%end%>
+<% if q.question_type_id == 1 %>
+<p> this is long answer</p>
+
+<%end%>
+
 <% end %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
