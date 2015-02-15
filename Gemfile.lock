@@ -168,7 +168,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  jquery-ui-rails
+  jquery-ui-rails (~> 5.0.3)
   neat
   pg
   rails (= 4.2.0)
