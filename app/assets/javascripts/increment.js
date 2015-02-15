@@ -16,6 +16,7 @@ app.incrementValues = function() {
     var reg = /\d+/;
     select.name = inputName.replace(reg, index);
     select.id = inputId.replace(reg, index);
+    console.log(select);
   });
 
 }
