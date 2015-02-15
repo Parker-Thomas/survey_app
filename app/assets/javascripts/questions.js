@@ -2,7 +2,8 @@ $(function() {
 
   // SELECT A QUESTION
   // When user chooses a question type, show it
-  $('.question-type').on('change', showQuestion);
+  $('form').on('change', '.question-type', showQuestion);
+  $('.question-type').selectable();
 
   function showQuestion(e) {
     var item=$(this);
@@ -16,7 +17,6 @@ $(function() {
 
     //  Grab our question template
     var question = $(questionType[item.val()]).html();
-    console.log(item.val());
     // find the next div and stick our question in there
     item.next().html(question);
   }
