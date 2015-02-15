@@ -3,17 +3,17 @@
 <label>
   <strong>Title:</strong>
   <%= @survey.title %>
-</label>
+</label><br>
 
 <label>
   <strong>Description:</strong>
   <%= @survey.description %>
-</label>
+</label><br>
 
 <label>
   <strong>Author:</strong>
   <%= @survey.author.name %>
-</label>
+</label><br>
 
 
 <% @survey.questions.each do |q| %>
