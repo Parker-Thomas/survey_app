@@ -3,7 +3,7 @@
     <%= link_to 'New Survey', new_survey_path %> <br>
     <h4>Your surveys</h4>
     <% @current_user.surveys.each do |s| %>
-      <%=link_to s.title, edit_survey_path(s, survey_id: s.id) %>
+      <%=link_to s.title, edit_survey_path(s, survey_id: s.id) %><br>
       <%=link_to 'submission', submissions_path( :survey_id => s.id) %><br>
     <% end %>
     <p id="notice"><%= notice %></p>
