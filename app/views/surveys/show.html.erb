@@ -18,16 +18,16 @@
 
 <% @survey.questions.each do |q| %>
 <% if q.question_type_id == 3 %>
-  <%= form_for(q) do |qq| %>
+  <%= form_for(@response) do |r| %>
     <div class="field">
-       <%= qq.label :text %><br/>
-       <%= qq.label :description, "Yes", :value => "true"  %>
-       <%= qq.radio_button :description, true %>
-       <%= qq.label :description, "No", :value => "false" %>
-       <%= qq.radio_button :description, false, :checked => true %>
+       <%= q.text %><br/>
+       <%= r.label :name, "Yes", :value => "true"  %>
+       <%= r.radio_button :name, true %>
+       <%= r.label :name, "No", :value => "false" %>
+       <%= r.radio_button :name, false, :checked => true %>
    </div>
    <div class="actions">
-     <%= qq.submit class: "btn" %>
+     <%= r.submit class: "btn" %>
   <%end%>
 <%end%>
 <% if q.question_type_id == 2 %>
