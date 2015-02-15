@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :take_survey, :submit_responses]
   before_action :authenticate_user, except: [:show]
 
   # GET /surveys
@@ -26,6 +26,16 @@ class SurveysController < ApplicationController
   # GET /surveys/1/edit
   def edit
     @survey.questions.build
+  end
+
+  # GET
+  def take_survey
+
+  end
+
+  # POST
+  def submit_responses
+
   end
 
   # GET
