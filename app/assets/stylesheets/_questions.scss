@@ -1,3 +1,13 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input[type=text],
+textarea {
+  display: block;
+  width: 100%;
+}
+
+.add-btn {
+  margin-bottom: .5em;
+}
