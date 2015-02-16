@@ -1,39 +1,12 @@
-
 <% if ff.object.question_type_id == 3 %>
-
   <%= render 'form_for_multiple_choice', :ff => ff %>
-
 <%end%>
 <% if ff.object.question_type_id == 4 %>
   <%= render 'form_for_yes_no', :ff => ff %>
-
 <% end %>
 <% if ff.object.question_type_id == 1 %>
-
   <%= render 'form_for_long', :ff => ff %>
 <% end %>
 <% if ff.object.question_type_id == 2 %>
   <%= render 'form_for_short', :ff => ff %>
 <% end %>
-
-<!-- Below is what I need to make the forms
-  It would be better not to have them with each question
-  ... it's alot of unneccesary code. If you have this with
-  every question and we have 6 questions, that's 18 unused
-  divs being appended to the dom ...
- -->
-
-
-<script type="text/html" id="multiple-choice">
-  <%= render 'form_for_multiple_choice', :ff => ff %>
-</script>
-
-<script type="text/html" id="yes-no">
-  <%= render 'form_for_yes_no', :ff => ff %>
-</script>
-<script type="text/html" id="long">
-  <%= render 'form_for_long', :ff => ff %>
-</script>
-<script type="text/html" id="short">
-  <%= render 'form_for_short', :ff => ff %>
-</script>
