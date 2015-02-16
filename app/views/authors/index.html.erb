@@ -3,7 +3,15 @@
     <%= link_to 'New Survey', new_survey_path %> <br>
     <h4>Your surveys:</h4>
     <% @current_user.surveys.each do |s| %>
-      <%=link_to s.title, edit_survey_path(s, survey_id: s.id) %><br>
-      <%=link_to 'Submission', take_survey_survey_path(s) %><br>
+      <%=link_to s.title, edit_survey_path(s, survey_id: s.id) %> |
+      <%=link_to 'Take the survey', take_survey_survey_path(s) %><br>
     <% end %>
     <p id="notice"><%= notice %></p>
+
+
+    <h2>All Surveys</h2>
+        <% @surveys.each do |s| %>
+          <%=link_to s.title, edit_survey_path(s, survey_id: s.id) %> |
+          <%=link_to 'Take the survey', take_survey_survey_path(s) %><br>
+        <% end %>
+        <p id="notice"><%= notice %></p>
