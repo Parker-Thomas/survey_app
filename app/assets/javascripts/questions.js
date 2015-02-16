@@ -5,6 +5,8 @@ $(function() {
   $('form').on('change', '.question-type', showQuestion);
   $('.question-type').selectable();
 
+  showQuestionOnLoad();
+
   function showQuestion(e) {
     var item=$(this);
     // Our types
@@ -19,6 +21,17 @@ $(function() {
     var question = $(questionType[item.val()]).html();
     // find the next div and stick our question in there
     item.next().html(question);
+  }
+  function showQuestionOnLoad() {
+    var questionType = {
+      3: '#multiple-choice',
+      4: '#yes-no',
+      1: '#long',
+      2: '#short'
+    }
+    var question = $(questionType[$('.question-type').val()]).html();
+    // find the next div and stick our question in there
+    $('.question-type').next().html(question);
   }
 
 });
