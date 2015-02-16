@@ -26,6 +26,7 @@
     <div class="question">
       <%= question_fields.label :question_type, "Question Type" %><br>
       <%= question_fields.collection_select(:question_type, QuestionType.all, :id, :name, {}, {:class=>'question-type'})%>
+      <p></p>
     </div>
     <%= render 'form_for_questions', :ff => question_fields %>
   <% end %>

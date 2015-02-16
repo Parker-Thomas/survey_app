@@ -8,9 +8,6 @@ $(function() {
       .first()
       .clone();
 
-
-    newQuestion.children('')
-
     item.before(newQuestion);
 
     app.incrementValues();
