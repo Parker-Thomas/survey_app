@@ -1,0 +1,19 @@
+<h2>Survey responses</h2>
+
+<%= @survey.title %>
+
+<%= form_tag submit_responses_survey_path do %>
+  <ul>
+    <% @survey.questions.each do |q| %>
+      <li>
+        <p><%= q.text %></p>
+        <p><%= text_field_tag "responses[#{q.id}]" %>
+      </li>
+    <% end %>
+  </ul>
+
+
+
+<br>
+<%= submit_tag "Submit" %>
+<% end %>

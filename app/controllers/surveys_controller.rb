@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :take_survey, :submit_responses]
   before_action :authenticate_user, except: [:show]
 
   # GET /surveys
@@ -26,6 +26,26 @@ class SurveysController < ApplicationController
   # GET /surveys/1/edit
   def edit
     @survey.questions.build
+  end
+
+  # GET
+  def take_survey
+
+  end
+
+  # POST
+  def submit_responses
+    # puts '----------'
+    # puts params
+    # puts '----------'
+    # puts params["responses"]
+    # puts '----------'
+
+    submission = Submission.create
+    @survey.questions.each do |q|
+      Response.create!(question_id: q.id,  submission_id: submission.id, name: params[:responses][q.id.to_s]  )
+    end
+    redirect_to authors_path
   end
 
   # GET
