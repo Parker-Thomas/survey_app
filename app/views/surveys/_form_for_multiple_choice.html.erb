@@ -5,7 +5,8 @@
 </div>
 <%= ff.fields_for :options do |fff| %>
   <div class="field">
-    <%= fff.label :name %>
-    <%= fff.text_field :name %>
+    <label>option:
+      <%= fff.text_field :name, class: 'multiple-option' %>
+    </label>
   </div>
 <%end%>
