@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       get 'edit_questions'
       post 'edit_questions'
       post 'update_questions'
+
+      get 'take_survey'
+      post 'submit_responses'
     end
   end
 
