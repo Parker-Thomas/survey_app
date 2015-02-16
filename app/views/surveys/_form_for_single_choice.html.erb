@@ -1,15 +1,11 @@
-<div class="single">
-  <div class="field">
-    <label>Multiple Choice:
-      <%= ff.text_area :text, class: 'multiple' %>
-    </label>
-  </div>
-
-  <%= ff.fields_for :options do |fff| %>
-    <div class="field">
-      <%= fff.label :name %>
-      <%= fff.text_field :name %>
-    </div>
-  <%end%>
-
+<div class="field">
+  <label>Multiple Choice:
+    <%= ff.text_area :text, class: 'multiple' %>
+  </label>
 </div>
+<%= ff.fields_for :options do |fff| %>
+  <div class="field">
+    <%= fff.label :name %>
+    <%= fff.text_field :name %>
+  </div>
+<%end%>

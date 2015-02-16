@@ -26,10 +26,15 @@
     <div class="question">
       <%= question_fields.label :question_type, "Question Type" %><br>
       <%= question_fields.collection_select(:question_type, QuestionType.all, :id, :name, {}, {:class=>'question-type'})%>
-      <p></p>
+      <p class="question--field">
+        <%= render 'form_for_questions', :ff => question_fields %>
+      </p>
     </div>
-    <%= render 'form_for_questions', :ff => question_fields %>
   <% end %>
+  <%= f.fields_for :question do |question_fields| %>
+    <%= render 'form_for_templates', :ff => question_fields %>
+  <% end %>
+
   <button class="btn add-btn">add</button>
 
   <div class="actions">
