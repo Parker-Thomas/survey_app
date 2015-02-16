@@ -21,7 +21,16 @@ QuestionType.create(name: "Single choice answer")
 QuestionType.create(name: "Yes or no answer")
 
 Question.create(text: "Do you think the President is doing a good job?", description: "White House, baby.", question_type_id: 1, survey_id: 1, order_number: 1)
-Question.create(text: "Is Barack Hussein Obama a Democrat or a Republican", description: "Presidential, baby.", question_type_id: 1, survey_id: 1, order_number: 2)
+Question.create(text: "What policy does Obama endorse?", description: "Presidential, baby.", question_type_id: 2, survey_id: 1, order_number: 2)
+Question.create(text: "What color is the White House?", description: "Secretary of code, baby.", question_type_id: 3, survey_id: 1, order_number: 3)
+Question.create(text: "Is Barack Hussein Obama a Democrat?", description: "Secretary of state, baby.", question_type_id: 4, survey_id: 1, order_number: 4)
 
 
-Option.create(name: "options", question_id: 1, order_number: 1)
+Option.create(name: "blue", question_id: 3, order_number: 1)
+Option.create(name: "green", question_id: 3, order_number: 2)
+Option.create(name: "black", question_id: 3, order_number: 3)
+Option.create(name: "white", question_id: 3, order_number: 4)
+
+
+Option.create(name: "yes", question_id: 4, order_number: 1)
+Option.create(name: "no", question_id: 4, order_number: 2)

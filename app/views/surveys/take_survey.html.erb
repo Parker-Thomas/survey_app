@@ -7,7 +7,7 @@
     <% @survey.questions.each do |q| %>
       <li>
         <p><%= q.text %></p>
-        <p><%= text_field_tag "responses[#{q.id}]" %>
+          <%= render :partial => 'response_fields', :locals => {:q => q}  %>
       </li>
     <% end %>
   </ul>

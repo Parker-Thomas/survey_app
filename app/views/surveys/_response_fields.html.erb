@@ -1,0 +1,18 @@
+<% if q.question_type_id == 1  %>
+  <p><%= text_area_tag "responses[#{q.id}]" %>
+
+<% elsif q.question_type_id == 2  %>
+  <p><%= text_field_tag "responses[#{q.id}]" %>
+
+
+<% elsif q.question_type_id == 3 || q.question_type_id == 4 %>
+  <% q.options.each do |o| %>
+    <p>
+      <%= radio_button_tag q.id, o.name %>
+      <%= label_tag o.name  %>
+    </p>
+  <% end %>
+
+
+
+<% end %>
