@@ -17,7 +17,7 @@ Survey.create(title: "Housing Survey", description: "A brief questionnaire to de
 
 QuestionType.create(name: "Long answer")
 QuestionType.create(name: "Short answer")
-QuestionType.create(name: "Single choice answer")
+QuestionType.create(name: "Multiple Choice answer")
 QuestionType.create(name: "Yes or no answer")
 
 Question.create(text: "Do you think the President is doing a good job?", description: "White House, baby.", question_type_id: 1, survey_id: 1, order_number: 1)
