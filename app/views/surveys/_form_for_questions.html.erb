@@ -1,7 +1,7 @@
 
 <% if ff.object.question_type_id == 3 %>
 
-  <%= render 'form_for_single_choice', :ff => ff %>
+  <%= render 'form_for_multiple_choice', :ff => ff %>
 
 <%end%>
 <% if ff.object.question_type_id == 4 %>
@@ -25,7 +25,7 @@
 
 
 <script type="text/html" id="multiple-choice">
-  <%= render 'form_for_single_choice', :ff => ff %>
+  <%= render 'form_for_multiple_choice', :ff => ff %>
 </script>
 
 <script type="text/html" id="yes-no">
